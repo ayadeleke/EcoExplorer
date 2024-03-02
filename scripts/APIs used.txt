@@ -1,0 +1,4 @@
+APIs Used for the project.
+1. For countries: https://restcountries.com/#endpoints-all
+2. For Species: treenation API : https://documenter.getpostman.com/view/6643991/S17m1X5P#intro
+3. For OAuth authentication : https://console.cloud.google.com/apis/credentials/consent/edit?project=ecoexplorer-412906

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>FAQ-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/faq.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#accommodation">Accommodation</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li class="auth-buttons">
+                    <button id="loginButton" onclick="openLogin()">Login</button>
+                    <button id="registerButton" onclick="openRegister()">Register</button>
+                </li>
+                
+            </ul>
+            <button id="toggleNavBtn">&#9776; Menu</button>
+        </nav>
+        <!-- <button class="nav-icon" onclick="toggleNavList()">&#9776;</button> -->
+        </header>
+        
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-tiles">
+            <div class="tile">
+                <p class="tile_text">Discover insights into EcoExplorer's commitment to conservation and tourism. Below, you'll find valuable information addressing queries frequently asked by our passionate clients and dedicated partners. Access detailed instructions and comprehensive support for a seamless exploration experience.</p>           </div>
+
+            <div class="tile">
+                <img src="images/faq.png" alt="FAQ_img">
+            </div>  
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3 class="question">How does EcoExplorer contribute to conservation efforts?</h3>
+                <span class="toggle">+</span>
+            </div>
+            <p class="answer">EcoExplorer actively supports conservation initiatives by promoting sustainable tourism practices, partnering with local conservation projects, and allocating a portion of proceeds to wildlife and environmental preservation.</p>
+        </div>
+        
+        <hr class="divider">
+        
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3 class="question">What environmental initiatives does EcoExplorer undertake?</h3>
+                <span class="toggle">+</span>
+            </div>
+            <p class="answer">EcoExplorer is committed to minimizing its ecological footprint. We engage in eco-friendly practices, such as offsetting carbon emissions, supporting reforestation projects, and advocating for responsible tourism.</p>
+        </div>
+        
+        <hr class="divider">
+        
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3 class="question">Can I contribute to wildlife conservation through EcoExplorer?</h3>
+                <span class="toggle">+</span>
+            </div>
+            <p class="answer">Yes, you can! EcoExplorer provides opportunities for travelers to actively participate in wildlife conservation projects during their journeys. Explore our itineraries to find experiences that align with your conservation interests.</p>
+        </div>
+        
+        <hr class="divider">
+        
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3 class="question">How does EcoExplorer support local communities and biodiversity?</h3>
+                <span class="toggle">+</span>
+            </div>
+            <p class="answer">EcoExplorer prioritizes community engagement and biodiversity preservation. We collaborate with local communities, ensuring that tourism benefits both people and the environment, fostering a harmonious relationship between travelers and the natural world.</p>
+        </div>
+        
+        <hr class="divider">
+        
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3 class="question">Are the accommodations listed on EcoExplorer eco-friendly?</h3>
+                <span class="toggle">+</span>
+            </div>
+            <p class="answer">Yes, EcoExplorer features accommodations committed to eco-friendly practices. We carefully select partners who prioritize sustainability, conservation, and responsible tourism to provide travelers with enriching and environmentally conscious experiences.</p>
+        </div>
+        
+        <hr class="divider">
+        
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3 class="question">How can I actively contribute to the conservation mission of EcoExplorer?</h3>
+                <span class="toggle">+</span>
+            </div>
+            <p class="answer">You can actively contribute by choosing sustainable travel options, participating in eco-friendly activities, and spreading awareness about responsible tourism. Additionally, consider joining our conservation-focused programs and supporting local initiatives through your EcoExplorer journeys.</p>
+        </div>
+        
+        <hr class="divider">
+        
+            <div class="faq-item">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <h3 class="question">How does EcoExplorer ensure the welfare of wildlife during tours?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <p class="answer">EcoExplorer prioritizes ethical wildlife encounters. Our tours are designed to minimize disturbance to animals, and we adhere to strict guidelines to ensure the well-being and conservation of wildlife populations.</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="faq-item">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <h3 class="question">Does EcoExplorer collaborate with local conservation experts?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <p class="answer">Yes, EcoExplorer collaborates with local conservation experts and organizations. We believe in fostering partnerships with those who have in-depth knowledge of the local ecosystems, contributing to the overall success of conservation efforts.</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="faq-item">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <h3 class="question">How can I contribute to community development through EcoExplorer?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <p class="answer">EcoExplorer empowers local communities by including community-based experiences in our itineraries. Travelers can actively contribute by participating in cultural exchanges, supporting local businesses, and engaging in community-led initiatives.</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="faq-item">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <h3 class="question">What steps does EcoExplorer take to promote responsible tourism?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <p class="answer">EcoExplorer promotes responsible tourism by educating travelers about the importance of minimizing their impact, respecting local cultures, and supporting conservation initiatives. We encourage sustainable travel practices that benefit both the environment and communities.</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="faq-item">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <h3 class="question">Is EcoExplorer committed to reducing single-use plastics during tours?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <p class="answer">Yes, EcoExplorer is dedicated to reducing single-use plastics. We work closely with our partners to implement eco-friendly practices, and our tours include initiatives to minimize plastic waste, promoting a more sustainable and eco-conscious travel experience.</p>
+            </div>
+    </div>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeLogin()">&times;</span>
+                <!-- Your login form content goes here -->
+                <h3>Login</h3>
+                <div class="input-container">
+                    <label for="loginUsername">Username:</label>
+                    <input type="text" id="loginUsername" name="loginUsername">
+                </div>
+                <div class="input-container">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword">
+                </div>
+                
+                <button onclick="login()">Login</button>
+                <div class="forgot-password">
+                    <a href="#" onclick="openForgotPassword()">Forgot Password?</a>
+                </div>
+                <!-- Google Sign-In button -->
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div id="loginMessage"></div>
+            </div>
+        </div>
+
+
+        <!-- Registration Modal -->
+        <div id="registrationModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeRegister()">&times;</span>
+                <!-- Your registration form content goes here -->
+                <h3>Register</h3>
+                <div class="input-container">
+                    <label for="registerFullName">Full Name:</label>
+                    <input type="text" id="registerFullName" name="registerFullName">
+                </div>
+                <div class="input-container">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" name="registerEmail">
+                </div>
+                <div class="input-container">
+                    <label for="registerUsername">Username:</label>
+                    <input type="text" id="registerUsername" name="registerUsername">
+                </div>
+                <div class="input-container">
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" name="registerPassword">
+                    <small>Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.</small>
+                </div>
+                <div class="input-container">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword">
+                </div>
+                <button onclick="register()">Register</button>
+                <!-- Google Sign-In button -->
+                <div class="g-signin2" data-onsuccess="onSignIn"></div><br>
+                <div id="registrationMessage"></div>
+            </div>
+        </div>
+
+        <!-- Forgot Password Modal -->
+        <div id="forgotPasswordModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeForgotPassword()">&times;</span>
+                <!-- Your forgot password form content goes here -->
+                <h3>Forgot Password</h3>
+                <div class="input-container">
+                    <label for="forgotPasswordEmail">Email:</label>
+                    <input type="email" id="forgotPasswordEmail" name="forgotPasswordEmail">
+                </div>
+                <button onclick="sendResetPasswordEmail()">Send Email</button>
+                <div id="forgotPasswordMessage"></div>
+            </div>
+        </div>
+
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

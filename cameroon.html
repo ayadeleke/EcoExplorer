@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>Cameroon-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/countries.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <button onclick="goBack()">&#8592; Back</button>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+
+        
+        <aside class="selection-container">
+            <label for="countries">Select Desired Africa Destination:</label>
+            <select id="countries">
+                <option value="" disabled selected>Select a Country</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Uganda">Uganda</option>
+            </select>
+        
+            <div id="speciesSelection">
+                <!-- Initially hidden, displayed based on user's selection -->
+                <label for="plantSpecies"></label>
+                <select id="plantSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose your tree species</option>
+                    <!-- Tree species options will be dynamically populated -->
+                </select>
+        
+                <label for="wildlifeSpecies"></label>
+                <select id="wildlifeSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose wildlife species</option>
+                    <!-- Wildlife species options will be dynamically populated -->
+                </select>
+            <div>
+                <button onclick="getInfo()">Get Info</button>
+            </div>
+
+            <div class="display-section" id="displaySection">
+                <table>
+                    <caption></caption>
+                </table>
+            </div>
+        </aside>
+        </header>
+
+        <section class="country-section">
+            <img src="images/flags/Cameroon.gif" alt="Cameroon Flag">
+            <div class="description-container">
+                <div class="description-wrapper">
+                    <div class="description">
+                        <h2>The Republic of Cameroon</h2>
+                        <p>
+                            Cameroon, a vibrant jewel situated in the heart of West Africa, unfolds its diverse landscapes like a magnificent tapestry. 
+                            From the verdant embrace of rainforests teeming with life to the sun-drenched savannas and the volcanic peaks scraping the sky, 
+                            Cameroon offers a breathtaking spectacle for the senses. Its rich history whispers tales of ancient kingdoms, 
+                            powerful empires like the Bamum and the Sao, and resilient communities who have carved their stories into the land.
+                            Having experienced colonial rule under various European powers, Cameroon gained independence in 1960, 
+                            marking the dawn of a new era characterized by self-governance and aspirations for development.
+                            </p><br>
+                            <p>
+                            Endowed with abundant natural wealth, Cameroon's economy revolves around diverse sectors, with cocoa cultivation, oil exploration, 
+                            and burgeoning tourism emerging as key drivers of growth alongside its renowned export of timber and coffee. The country takes pride in its rich biodiversity, 
+                            which serves as a cornerstone of its burgeoning ecotourism sector. The lush rainforests harbor a myriad of plant species, including towering ebony trees and the coveted African mahogany. 
+                            Its wildlife is equally impressive, boasting majestic lions, elusive leopards, and vibrant birdlife. Yet, amid this natural splendor, Cameroon faces pressing challenges to its precious 
+                            biodiversity. Habitat destruction, illegal poaching, and the impacts of climate change threaten iconic species such as the African forest elephant and the critically endangered 
+                            Cross River gorilla. In response, Cameroon has taken proactive measures, establishing protected areas and implementing stringent conservation policies to safeguard its natural heritage 
+                            for future generations.
+                            </p><br>
+                            <p>
+                            Culturally, Cameroon is a vibrant mosaic of traditions, languages, and customs, with over 200 ethnic groups contributing to its rich tapestry of heritage. 
+                            From the bustling markets of Douala to the tranquil villages of the Grassfields, Cameroon pulsates with the rhythms of diversity, exemplifying the harmonious coexistence of its people. 
+                            Festivals play a central role in Cameroonian culture, serving as occasions for communal revelry and spiritual expression. The Ngondo festival of the Sawa people, for instance, 
+                            celebrates the ancestral spirits with colorful processions, traditional dances, and feasting on local delicacies. Music and dance are integral to Cameroonian identity, with genres 
+                            like Makossa and Bikutsi captivating audiences both at home and abroad.</p><br>
+                            <p>
+                            Despite its linguistic diversity, with French and English as official languages alongside numerous indigenous tongues, Cameroon remains united in its pursuit of progress. 
+                            Governed as a democratic republic, the country faces challenges in areas such as infrastructure development and political stability. Yet, under the leadership of President Paul Biya, 
+                            Cameroon is committed to charting a path towards sustainable development and prosperity for all its citizens. With its breathtaking landscapes, rich cultural heritage, and dynamic populace, Cameroon stands poised to emerge as a beacon of resilience and progress in the heart of Africa.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-button">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        
+        <!-- plant section -->
+        <section class="plant-section">
+            <h1>The Plant Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Bush candle.webp" alt="Bush candle">
+                </div>
+                <div class="image-info">
+                    <h2>Bush candle</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Cordia platythyrsa.jpg" alt="Cordia platythyrsa">
+                </div>
+                <div class="image-info">
+                    <h2>Cordia platythyrsa</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African cherry.jpg" alt="African cherry">
+                </div>
+                <div class="image-info">
+                    <h2>African cherry</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Broad-leaved croton.jpg" alt="Broad-leaved croton">
+                </div>
+                <div class="image-info">
+                    <h2>Broad-leaved croton</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Tiama.jpg" alt="Tiama">
+                </div>
+                <div class="image-info">
+                    <h2>Tiama</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Parasol tree.webp" alt="Parasol tree">
+                </div>
+                <div class="image-info">
+                    <h2>Parasol tree</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/False assegai.jpg" alt="False assegai">
+                </div>
+                <div class="image-info">
+                    <h2>False assegai</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Guibourtia.jpg" alt="Guibourtia">
+                </div>
+                <div class="image-info">
+                    <h2>Guibourtia</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African pterygota.jpg" alt="African pterygota">
+                </div>
+                <div class="image-info">
+                    <h2>African pterygota</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Schefflera.jpg" alt="Schefflera">
+                </div>
+                <div class="image-info">
+                    <h2>Schefflera</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+        <!-- Animal section -->
+        <section class="animal-section">
+            <h1>The Animal Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/African elephant.jpg" alt="African Elephant">
+                </div>
+                <div class="image-info">
+                    <h2>African Elephant</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Lion.webp" alt="Lion">
+                </div>
+                <div class="image-info">
+                    <h2>Lion</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Leopard.jpg" alt="Leopard">
+                </div>
+                <div class="image-info">
+                    <h2>Leopard</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Chimpanzee.jpg" alt="Chimpanzee">
+                </div>
+                <div class="image-info">
+                    <h2>Chimpanzee</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/African Wild Dog.jpg" alt="African Wild Dog">
+                </div>
+                <div class="image-info">
+                    <h2>African Wild Dog</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Hippopotamus.jpg" alt="Hippopotamus">
+                </div>
+                <div class="image-info">
+                    <h2>Hippopotamus</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Gorilla.jpg" alt="Gorilla">
+                </div>
+                <div class="image-info">
+                    <h2>Gorilla</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Forest Buffalo.png" alt="Forest Buffalo">
+                </div>
+                <div class="image-info">
+                    <h2>Forest Buffalo</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Giant Pangolin.jpg" alt="Giant Pangolin">
+                </div>
+                <div class="image-info">
+                    <h2>Giant Pangolin</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Bongo.jpg" alt="Bongo">
+                </div>
+                <div class="image-info">
+                    <h2>Bongo</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+    <script>
+            function goBack() {
+    window.location.href = "home.html";
+}
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+    <script src="./scripts/select.js"></script>
+    <script src="./scripts/scroll.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

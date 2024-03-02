@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>Ghana-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/countries.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <button onclick="goBack()">&#8592; Back</button>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+
+        
+        <aside class="selection-container">
+            <label for="countries">Select Desired Africa Destination:</label>
+            <select id="countries">
+                <option value="" disabled selected>Select a Country</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Uganda">Uganda</option>
+            </select>
+        
+            <div id="speciesSelection">
+                <!-- Initially hidden, displayed based on user's selection -->
+                <label for="plantSpecies"></label>
+                <select id="plantSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose your tree species</option>
+                    <!-- Tree species options will be dynamically populated -->
+                </select>
+        
+                <label for="wildlifeSpecies"></label>
+                <select id="wildlifeSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose wildlife species</option>
+                    <!-- Wildlife species options will be dynamically populated -->
+                </select>
+            <div>
+                <button onclick="getInfo()">Get Info</button>
+            </div>
+
+            <div class="display-section" id="displaySection">
+                <table>
+                    <caption></caption>
+                </table>
+            </div>
+        </aside>
+        </header>
+
+        <section class="country-section">
+            <img src="images/flags/Ghana.gif" alt="Ghana Flag">
+            <div class="description-container">
+                <div class="description-wrapper">
+                    <div class="description">
+                        <h2>The Republic of Ghana</h2>
+                        <p>
+                            Nestled on the vibrant coast of West Africa, Ghana boasts a diverse tapestry of landscapes, from lush rainforests and cascading waterfalls to rolling hills and sun-drenched savannahs. 
+                            Its rich history stretches back centuries, echoing with the stories of ancient kingdoms like the Ashanti Empire and the powerful Ga people. 
+                            Colonized by the British in the late 19th century, Ghana emerged as an independent nation in 1957, paving the way for a new chapter of self-determination and growth.</p><br>
+                            <p>Blessed with abundant natural resources, Ghana's economy is fueled by gold, its most prized treasure. However, the country is actively seeking diversification, 
+                            venturing into sectors like cocoa production, oil and gas exploration, and tourism to unlock its full economic potential. Ghana's remarkable biodiversity is a source of national pride 
+                            and a cornerstone of its ecotourism industry. Its rainforests are home to a vibrant array of plant life, including towering mahogany trees and the unique shea tree, from which the 
+                            country derives its famous shea butter. The diverse animal kingdom boasts impressive elephants and graceful antelope, alongside playful monkeys and colorful birdlife.</p><br>
+                            <p>However, amidst this splendor, threats to Ghana's precious biodiversity loom large. Habitat loss, poaching, and climate change pose significant challenges to iconic species 
+                            like the African elephant, whose populations dwindle due to human-wildlife conflict and the illegal ivory trade. Similarly, the Mona monkey, a symbol of Ghana's rich wildlife, 
+                            faces habitat loss and illegal hunting for bushmeat. Recognizing the urgency of conservation, Ghana has established numerous protected areas and implemented anti-poaching measures. 
+                            Initiatives like community-based conservation programs and sustainable resource management practices are fostering a sense of environmental responsibility and promoting coexistence 
+                            between humans and wildlife.</p><br>
+                            <p>Culturally, Ghana is a kaleidoscope of diverse ethnicities, traditions, and customs, each contributing to the nation's vibrant and colorful tapestry. 
+                            With over 80 ethnic groups spread across the country, Ghana's cultural landscape is a testament to its rich and multifaceted heritage. 
+                            From the bustling markets of Accra to the serene villages of the Volta Region, Ghana pulsates with the rhythms of life, echoing the harmonious coexistence of its diverse peoples.
+                            Vibrant festivals play a central role in Ghanaian culture, serving as occasions for communal celebration, spiritual expression, and social cohesion. The Homowo festival of the Ga people, 
+                            for example, commemorates the ancestral journey of the Ga people and is marked by lively processions, traditional dances, and feasting on local delicacies. Similarly, 
+                            the Damba festival celebrated by the Dagombas in the northern regions of Ghana is a vibrant display of cultural pride and unity, featuring colorful parades, horse riding, 
+                            and traditional drumming and dance performances.Music and dance are integral components of Ghanaian culture, serving as powerful expressions of identity, spirituality, and 
+                            social commentary. Traditional drumming ensembles, such as the talking drums of the Ashanti and the kpalogo drums of the northern regions, animate social gatherings and ceremonial 
+                            events, infusing them with energy and rhythm. Highlife music, a genre born in Ghana during the colonial era, blends indigenous rhythms with Western influences, creating a uniquely 
+                            Ghanaian sound that continues to captivate audiences at home and abroad. Despite the linguistic diversity stemming from Ghana's numerous ethnic groups, 
+                            English serves as the official language and the medium of instruction in schools and government institutions. This linguistic unity facilitates communication and 
+                            interaction across ethnic boundaries, fostering national cohesion and identity. However, indigenous languages such as Akan, Ewe, Ga, and Dagbani are also widely spoken and cherished, 
+                            serving as repositories of cultural heritage and identity for their respective communities..</p><br>
+                            <p>Ghana operates as a democratic republic, following a presidential system of government. Under the leadership of President Nana Akufo-Addo, 
+                            the country faces challenges in areas like infrastructure development and political stability, yet remains steadfast in its pursuit of progress and prosperity. 
+                            A dynamic and youthful population fuels innovation and entrepreneurship, paving the way for a brighter future. Opportunities abound in Ghana, from investing in infrastructure and 
+                            renewable energy to expanding agricultural productivity and fostering a thriving tourism industry. The country's strategic location, stable democracy, and skilled workforce make 
+                            it an attractive prospect for investors seeking new frontiers. With continued efforts towards sustainable development and a commitment to its rich cultural heritage, 
+                            Ghana has the potential to shine as a beacon of hope and progress in West Africa.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-button">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        
+        <!-- plant section -->
+        <section class="plant-section">
+            <h1>The Plant Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African White Mahogany.png" alt="African White Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>African White Mahogany</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Iroko.jpg" alt="Iroko">
+                </div>
+                <div class="image-info">
+                    <h2>Iroko</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Ceiba.jpg" alt="Ceiba">
+                </div>
+                <div class="image-info">
+                    <h2>Ceiba</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African locust bean.jpg" alt="African Locust Bean">
+                </div>
+                <div class="image-info">
+                    <h2>African Locust Bean</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African fan palm.jfif" alt="African Fan Palm">
+                </div>
+                <div class="image-info">
+                    <h2>African Fan Palm</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Ackee.jpg" alt="Ackee">
+                </div>
+                <div class="image-info">
+                    <h2>Ackee</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Shea.jpg" alt="Shea">
+                </div>
+                <div class="image-info">
+                    <h2>Shea</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Tamarind.jpg" alt="Tamarind">
+                </div>
+                <div class="image-info">
+                    <h2>Tamarind</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+        <!-- Animal section -->
+        <section class="animal-section">
+            <h1>The Animal Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Kob.jpg" alt="Kob">
+                </div>
+                <div class="image-info">
+                    <h2>Kob</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Lion.webp" alt="Lion">
+                </div>
+                <div class="image-info">
+                    <h2>Lion</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Leopard.jpg" alt="Leopard">
+                </div>
+                <div class="image-info">
+                    <h2>Leopard</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/African elephant.jpg" alt="African Elephant">
+                </div>
+                <div class="image-info">
+                    <h2>African Elephant</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Olive Baboon.jpg" alt="Olive Baboon">
+                </div>
+                <div class="image-info">
+                    <h2>Olive Baboon</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/African Wild Dog.jpg" alt="African Wild Dog">
+                </div>
+                <div class="image-info">
+                    <h2>African Wild Dog</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/African buffalo.jpg" alt="African buffalo">
+                </div>
+                <div class="image-info">
+                    <h2>African buffalo</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Hippopotamus.jpg" alt="Hippopotamus">
+                </div>
+                <div class="image-info">
+                    <h2>Hippopotamus</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Mona Monkey.jpg" alt="Mona Monkey">
+                </div>
+                <div class="image-info">
+                    <h2>Mona Monkey</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/animals/Pygmy Hippopotamus.jpg" alt="Pygmy Hippopotamus">
+                </div>
+                <div class="image-info">
+                    <h2>Pygmy Hippopotamus</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+    <script>
+            function goBack() {
+    window.location.href = "home.html";
+}
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+    <script src="./scripts/select.js"></script>
+    <script src="./scripts/scroll.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

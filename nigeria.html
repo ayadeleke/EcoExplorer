@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>Nigeria-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/countries.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <button onclick="goBack()">&#8592; Back</button>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+
+        
+        <aside class="selection-container">
+            <label for="countries">Select Desired Africa Destination:</label>
+            <select id="countries">
+                <option value="" disabled selected>Select a Country</option>
+                <!-- Add country options here -->
+                <option value="Botswana">Botswana</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Uganda">Uganda</option>
+            </select>
+        
+            <div id="speciesSelection">
+                <!-- Initially hidden, displayed based on user's selection -->
+                <label for="plantSpecies"></label>
+                <select id="plantSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose your tree species</option>
+                    <!-- Tree species options will be dynamically populated -->
+                </select>
+        
+                <label for="wildlifeSpecies"></label>
+                <select id="wildlifeSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose wildlife species</option>
+                    <!-- Wildlife species options will be dynamically populated -->
+                </select>
+            <div>
+                <button onclick="getInfo()">Get Info</button>
+            </div>
+
+            <div class="display-section" id="displaySection">
+                <table>
+                    <caption></caption>
+                </table>
+            </div>
+        </aside>
+        </header>
+
+        <section class="country-section">
+            <img src="images/flags/Nigeria_flag_with_coat_of_arms.gif" alt="Nigeria Flag">
+            <div class="description-container">
+                <div class="description-wrapper">
+                    <div class="description">
+                        <h2>Federal Republic of Nigeria</h2>
+                        <p>
+                            Nigeria, officially known as the Federal Republic of Nigeria, occupies a prominent position in West Africa, where it is nestled between the Sahel to the north and the Gulf of Guinea 
+                            to the south, lapped by the waters of the Atlantic Ocean. Encompassing a landmass of 923,769 square kilometers (356,669 sq mi), Nigeria stands as a vast and diverse nation, 
+                            teeming with cultural richness and natural beauty.
+                            With a population exceeding 230 million, Nigeria proudly holds the title of the most populous country in Africa and ranks as the world's sixth-most populous nation. 
+                            Its borders are shared with Niger to the north, Chad to the northeast, Cameroon to the east, and Benin to the west, fostering a sense of regional interconnectedness and diversity.
+                            Nigeria operates as a federal republic, consisting of 36 states and the Federal Capital Territory, where the bustling capital city of Abuja is located. 
+                            However, it is the vibrant city of Lagos that takes center stage as Nigeria's largest metropolis, standing as one of the world's largest metropolitan areas and the largest in Africa.
+                            Beyond its bustling urban centers, Nigeria's landscape is a mosaic of diverse ecosystems, ranging from lush rainforests to expansive savannas. 
+                            Its natural wonders provide habitat to a rich array of flora and fauna, contributing to the country's ecological significance and biodiversity.
+                            </p><br>
+                        <p>
+                            Nigeria, nestled in the heart of West Africa, boasts a tapestry of geographical diversity, from lush rainforests to expansive savannas and sprawling coastal plains. 
+                            Its history is a rich mosaic, woven with the threads of ancient civilizations like the Nok culture and powerful empires such as the Oyo and Benin kingdoms. 
+                            Colonized by the British in the late 19th century, Nigeria gained independence in 1960, heralding a new era of self-governance and aspirations for progress.<br>
+                            Blessed with abundant natural resources, Nigeria's economy has long been fueled by its oil wealth. However, efforts are underway to diversify the economy, 
+                            tapping into sectors like agriculture, telecommunications, and manufacturing to unlock new avenues for growth and development. The country's vast biodiversity, 
+                            encompassing a myriad of tree species like the towering mahogany and mighty baobab, alongside a rich tapestry of wildlife ranging from elephants and 
+                            lions to chimpanzees and diverse bird species, presents significant opportunities for ecotourism and conservation initiatives.<br>
+                            Among these are several iconic animals and plants that are classified as threatened or endangered due to factors such as habitat loss, poaching, pollution, and climate change.
+                            One notable example is the African elephant (Loxodonta africana), whose populations have dwindled over the years due to poaching for ivory and loss of habitat. 
+                            Despite conservation efforts, including the establishment of protected areas and anti-poaching measures, elephants continue to face significant threats in Nigeria.</p><br>
+                            <p>Similarly, the majestic lion (Panthera leo), once widespread across the country, has seen its numbers decline drastically, primarily due to habitat loss and human-wildlife conflict. 
+                            Efforts to protect and restore lion populations are underway, but the species remains vulnerable to extinction in Nigeria.
+                            The Nigerian-Cameroon chimpanzee (Pan troglodytes ellioti) is another species at risk, facing habitat destruction from deforestation and illegal hunting for bushmeat. 
+                            As one of the most endangered subspecies of chimpanzee, urgent action is needed to safeguard its future in Nigeria.<br>
+                            In addition to charismatic megafauna, Nigeria is home to a diverse array of plant species facing threats. The Nigerian ebony (Diospyros crassiflora), 
+                            prized for its valuable timber, is under pressure from logging and habitat degradation. Similarly, the African mahogany (Khaya senegalensis) and 
+                            other valuable timber species are at risk of overexploitation.</p><br>
+                            <p>Conservation organizations, government agencies, and local communities are working together to address these threats and protect Nigeria's biodiversity. 
+                            Initiatives range from the establishment of protected areas and wildlife corridors to community-based conservation projects and sustainable livelihood programs. 
+                            Education and awareness campaigns are also crucial in fostering a culture of conservation and promoting the sustainable use of natural resources.<br>
+                            Culturally, Nigeria is a melting pot, home to over 250 ethnic groups, each with its own unique languages, traditions, and customs. 
+                            This diversity is celebrated through vibrant festivals, colorful attire, and an eclectic culinary landscape. English serves as the official language, 
+                            facilitating communication across ethnic boundaries while preserving indigenous languages.</p><br>
+                            <p>In the realm of politics, Nigeria operates as a federal republic, with a presidential system of government. 
+                            Elections are hotly contested affairs, reflecting the vibrancy of the country's democratic process. Challenges such as insecurity, corruption, and infrastructural deficits loom large, 
+                            yet Nigeria remains resilient, with a burgeoning youth population driving innovation and entrepreneurship.
+                            Opportunities abound in Nigeria, from investment in infrastructure and technology to harnessing renewable energy sources and promoting sustainable agriculture. 
+                            The country's strategic location, burgeoning middle class, and dynamic market make it an attractive destination for local and foreign investors alike. 
+                            With the right policies and investments, Nigeria has the potential to emerge as a beacon of prosperity and progress, not just for its citizens but for the wider African continent.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-button">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        <!-- plant section -->
+        <section class="plant-section">
+            <h1>The Plant Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African White Mahogany.png" alt="African White Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>African White Mahogany</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Iroko.jpg" alt="Iroko">
+                </div>
+                <div class="image-info">
+                    <h2>Iroko</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African pterygota.jpg" alt="African pterygota">
+                </div>
+                <div class="image-info">
+                    <h2>African pterygota</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African oil palm.jpg" alt="African oil palm">
+                </div>
+                <div class="image-info">
+                    <h2>African oil palm</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Pitch Pine.jpg" alt="Pitch Pine">
+                </div>
+                <div class="image-info">
+                    <h2>Pitch Pine</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African locust bean.jpg" alt="African locust bean">
+                </div>
+                <div class="image-info">
+                    <h2>African locust bean</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Afzelia.jpg" alt="Afzelia">
+                </div>
+                <div class="image-info">
+                    <h2>Afzelia</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Birch.jpg" alt="African Birch">
+                </div>
+                <div class="image-info">
+                    <h2>African Birch</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+        <!-- Animal section -->
+        <section class="animal-section">
+            <h1>The Animal Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African White Mahogany.png" alt="African White Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>African White Mahogany</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Iroko.jpg" alt="Iroko">
+                </div>
+                <div class="image-info">
+                    <h2>Iroko</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African pterygota.jpg" alt="African pterygota">
+                </div>
+                <div class="image-info">
+                    <h2>African pterygota</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African oil palm.jpg" alt="African oil palm">
+                </div>
+                <div class="image-info">
+                    <h2>African oil palm</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Pitch Pine.jpg" alt="Pitch Pine">
+                </div>
+                <div class="image-info">
+                    <h2>Pitch Pine</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African locust bean.jpg" alt="African locust bean">
+                </div>
+                <div class="image-info">
+                    <h2>African locust bean</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Afzelia.jpg" alt="Afzelia">
+                </div>
+                <div class="image-info">
+                    <h2>Afzelia</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Birch.jpg" alt="African Birch">
+                </div>
+                <div class="image-info">
+                    <h2>African Birch</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+    <script>
+            function goBack() {
+    window.location.href = "home.html";
+}
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+    <script src="./scripts/select.js"></script>
+    <script src="./scripts/scroll.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,319 @@
+* {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    margin-top: -50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    display: none;
+    justify-content: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: -1000px; /* This value might be too high */
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.selection-container {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    margin-top: -50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.selection-container label {
+    margin-bottom: 10px;
+}
+
+.selection-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.selection-container button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#speciesSelection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#speciesSelection select {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.display-section {
+    margin-top: 20px;
+}
+
+.display-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.display-section th, .display-section td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.display-section th {
+    background-color: #333;
+    color: #fff;
+}
+
+.country-section {
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 50px auto;
+}
+
+.country-section img {
+    max-width: 20%;
+    max-height: auto;
+}
+
+.country-section h2 {
+    font-size: 3.5em;
+    font-family: 'Kalam';
+    margin-bottom: 20px;
+}
+
+.description p {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0 50px;
+}
+
+.description-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; /* Add space below the description */
+}
+
+.description-wrapper {
+    max-height: none; /* Set the initial max height to none */
+    overflow-y: visible; /* Hide overflow content */
+    transition: max-height 0.3s ease; /* Smooth transition effect */
+}
+
+
+.description-wrapper.expanded {
+    max-height: none; /* Expand wrapper to show full content */
+}
+
+.plant-section h1,
+.animal-section h1{
+    text-align: center;
+}
+
+.expand-button {
+    display: none; /* Hide the expand button by default */
+    position: fixed; /* Make the button fixed-positioned */
+    bottom: 20px; /* Adjust the distance from the bottom of the viewport */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Center the button horizontally */
+    z-index: 999; /* Ensure the button appears above other content */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .expand-button {
+        display: none; /* Hide the button in mobile view */
+    }
+
+.expand-button i {
+    font-size: 18px;
+}
+
+.expand-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.image-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.image-tile {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.image-container {
+    height: 200px; /* Set a fixed height for all image containers */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-info {
+    padding: 10px;
+}
+
+.image-info h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.image-info p {
+    margin-bottom: 0;
+    font-size: 1em;
+}
+
+
+
+.find-out-more {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+.find-out-more a {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.find-out-more a:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    main {
+        margin-right: 0;
+        z-index: auto;
+    }
+
+    footer {
+        z-index: auto;
+        position: relative;
+        width: auto;
+    }
+
+    header h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .selection-container {
+        margin-top: 10px;
+    }
+
+    .display-section {
+        margin-top: 20px;
+        width: auto;
+        font-size: 12px;
+    }
+
+    .country-section img {
+        max-width: 80%;
+        max-height: auto;
+        margin-top: -50px;
+    }
+
+    .country-section h2 {
+        font-size: 1.2em;
+        font-family: 'Kalam';
+        margin-bottom: 20px;
+    }
+
+    .description-wrapper {
+        overflow: hidden; /* Restore overflow hidden for mobile view */
+    }
+
+    .description-wrapper.collapsed {
+        max-height: 150px; /* Set a maximum height for collapsed state */
+    }
+
+    .expand-button {
+        display: contents; /* Display the expand button */
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1; /* Ensure the button is above other content */
+    }
+}

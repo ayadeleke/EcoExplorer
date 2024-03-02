@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>Rwanda-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/countries.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <button onclick="goBack()">&#8592; Back</button>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+
+        
+        <aside class="selection-container">
+            <label for="countries">Select Desired Africa Destination:</label>
+            <select id="countries">
+                <option value="" disabled selected>Select a Country</option>
+                <!-- Add country options here -->
+                <option value="Botswana">Botswana</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Uganda">Uganda</option>
+            </select>
+        
+            <div id="speciesSelection">
+                <!-- Initially hidden, displayed based on user's selection -->
+                <label for="plantSpecies"></label>
+                <select id="plantSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose your tree species</option>
+                    <!-- Tree species options will be dynamically populated -->
+                </select>
+        
+                <label for="wildlifeSpecies"></label>
+                <select id="wildlifeSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose wildlife species</option>
+                    <!-- Wildlife species options will be dynamically populated -->
+                </select>
+            <div>
+                <button onclick="getInfo()">Get Info</button>
+            </div>
+
+            <div class="display-section" id="displaySection">
+                <table>
+                    <caption></caption>
+                </table>
+            </div>
+        </aside>
+        </header>
+
+        <section class="country-section">
+            <img src="images/flags/Rwanda.gif" alt="Rwanda Flag">
+            <div class="description-container">
+                <div class="description-wrapper">
+                    <div class="description">
+                        <h2>The Republic of Rwanda</h2>
+                        <p>
+                            Rwanda, officially known as the Republic of Rwanda, is a captivating landlocked country situated in Eastern part of the African continent. 
+                            Embodied within the scenic landscapes of the Great Rift Valley, Rwanda's geographical allure is unmatched. 
+                            Located just a few degrees south of the Equator, Rwanda shares borders with Uganda, Tanzania, Burundi, and the Democratic Republic of the Congo. 
+                            Its elevated terrain earns it the endearing nickname "land of a thousand hills" (pays des mille collines), with majestic mountains dominating the western landscape and 
+                            sweeping savannas stretching southeastward. Lakes dot the countryside, adding to Rwanda's natural allure.<br>
+                            The climate of Rwanda is temperate to subtropical, characterized by two distinct rainy seasons and two dry seasons each year. 
+                            This climatic diversity contributes to the country's rich biodiversity and lush vegetation. Despite its modest size, Rwanda boasts a remarkably dense population, 
+                            earning the distinction of being the most densely populated mainland African country. Globally, among nations exceeding 10,000 square kilometers in size, 
+                            Rwanda ranks as the fifth most densely populated country🌄.
+                            </p><br>
+                            <p>
+                            Defined by a turbulent history marked by the tragic events of the 1994 genocide against the Tutsi, Rwanda has embarked on a remarkable journey of healing, reconciliation, and renewal. 
+                            Under the visionary leadership of President Paul Kagame, the country has undergone a remarkable transformation, emerging as a shining example of post-conflict recovery and 
+                            nation-building. Rich in biodiversity, Rwanda's landscapes range from lush rainforests and verdant tea plantations to shimmering lakes and rolling hills that stretch as far as the 
+                            eye can see. The iconic Virunga Mountains, home to the rare and endangered mountain gorillas, stand as a symbol of Rwanda's commitment to conservation and ecotourism.
+                            Despite its small size, Rwanda's economy has experienced steady growth, driven by investments in sectors such as agriculture, tourism, and information technology. 
+                            The country's efforts to promote entrepreneurship and innovation have earned it recognition as one of Africa's most dynamic and business-friendly economies 🌄.
+                            </p><br>
+                            <p>
+                            Rwanda, though small in size, is home to a rich array of tree and animal species, many of which are endemic to the region. However, like many countries around the world, 
+                            Rwanda faces challenges related to habitat loss, climate change, and poaching, which threaten the survival of several species, including some that are endangered.In terms of tree species, 
+                            Rwanda's varied landscapes support a diverse range of vegetation. The country's highlands are adorned with lush forests, while its savannas and valleys boast different types of woodland. 
+                            Notable tree species found in Rwanda include the East African yellowwood, commonly known as "umuhengeri" in Kinyarwanda, which is native to the region and prized for its valuable timber. 
+                            Other important tree species include the African mahogany, acacia species such as Acacia seyal and Acacia nilotica, and various types of fig trees.
+                            Rwanda's wildlife is equally diverse and includes numerous species of mammals, birds, reptiles, and amphibians. 
+                            The country's national parks and reserves provide essential habitats for these animals, offering refuge from human encroachment and poaching. 
+                            Among the iconic animal species found in Rwanda are the mountain gorillas, which inhabit the volcanic slopes of the Virunga Massif in the northwest of the country. 
+                            These gentle giants are critically endangered, with only a few hundred individuals remaining in the wild. Efforts such as conservation programs and ecotourism initiatives, 
+                            including gorilla trekking, are crucial for their survival. Another notable species is the eastern chimpanzee, found in Nyungwe Forest National Park. 
+                            Like their gorilla counterparts, chimpanzees are threatened by habitat loss and poaching for the bushmeat trade. Nyungwe Forest is also home to other endangered primates, 
+                            such as the L'Hoest's monkey and the golden monkey🌄.
+                            </p><br>
+                            <p>
+                            Rwanda's wetlands, including Akagera National Park and the Nyabarongo-Kagera wetland system, provide vital habitat for numerous bird species, including the endangered shoebill stork, 
+                            the papyrus gonolek, and the Madagascar pond heron. These wetlands are also important for migratory birds, making them crucial sites for conservation efforts. 
+                            In addition to these flagship species, Rwanda is home to a variety of other endangered and threatened animals, including the African elephant, the African lion, 
+                            the black rhinoceros, and various species of antelope and small mammals. Conservation efforts in Rwanda, including the establishment of national parks, 
+                            community-based conservation initiatives, and anti-poaching measures, are vital for protecting the country's unique biodiversity and ensuring the survival of its endangered species for future generations 🌄.
+                            </p>                            
+                    </div>
+                </div>
+            </div>
+            <div class="expand-button">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        
+        <!-- plant section -->
+        <section class="plant-section">
+            <h1>The Plant Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Flat-top acacia.jpg" alt="Flat-top acacia">
+                </div>
+                <div class="image-info">
+                    <h2>Flat-top acacia</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Shittim Wood.jpg" alt="Shittim Wood">
+                </div>
+                <div class="image-info">
+                    <h2>Shittim Wood</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Gummy canthium.jpg" alt="Gummy canthium">
+                </div>
+                <div class="image-info">
+                    <h2>Gummy canthium</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Large-leaved Albizia.jpg" alt="Large-leaved Albizia">
+                </div>
+                <div class="image-info">
+                    <h2>Large-leaved Albizia</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/white Pear.jpg" alt="white Pear">
+                </div>
+                <div class="image-info">
+                    <h2>White Pear</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/winged bersama.jpg" alt="Winged Bersama">
+                </div>
+                <div class="image-info">
+                    <h2>Winged Bersama</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Afzelia.jpg" alt="Afzelia">
+                </div>
+                <div class="image-info">
+                    <h2>Afzelia</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Glomerate Daisy.jpg" alt="Glomerate Daisy">
+                </div>
+                <div class="image-info">
+                    <h2>Glomerate Daisy</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Croton Tree.jpg" alt="Croton Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Croton Tree</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Sicklebush.jpg" alt="Sicklebush">
+                </div>
+                <div class="image-info">
+                    <h2>Sicklebush</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+
+        <!-- Animal section -->
+        <section class="animal-section">
+            <h1>The Animal Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African White Mahogany.png" alt="African White Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>African White Mahogany</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Iroko.jpg" alt="Iroko">
+                </div>
+                <div class="image-info">
+                    <h2>Iroko</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African pterygota.jpg" alt="African pterygota">
+                </div>
+                <div class="image-info">
+                    <h2>African pterygota</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African oil palm.jpg" alt="African oil palm">
+                </div>
+                <div class="image-info">
+                    <h2>African oil palm</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Pitch Pine.jpg" alt="Pitch Pine">
+                </div>
+                <div class="image-info">
+                    <h2>Pitch Pine</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African locust bean.jpg" alt="African locust bean">
+                </div>
+                <div class="image-info">
+                    <h2>African locust bean</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Afzelia.jpg" alt="Afzelia">
+                </div>
+                <div class="image-info">
+                    <h2>Afzelia</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Birch.jpg" alt="African Birch">
+                </div>
+                <div class="image-info">
+                    <h2>African Birch</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+
+    </section>
+
+    <script>
+            function goBack() {
+    window.location.href = "home.html";
+}
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+    <script src="./scripts/select.js"></script>
+    <script src="./scripts/scroll.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

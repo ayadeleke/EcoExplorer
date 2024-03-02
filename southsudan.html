@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>South Sudan-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/countries.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <button onclick="goBack()">&#8592; Back</button>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+
+        
+        <aside class="selection-container">
+            <label for="countries">Select Desired Africa Destination:</label>
+            <select id="countries">
+                <option value="" disabled selected>Select a Country</option>
+                <!-- Add country options here -->
+                <option value="Botswana">Botswana</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Uganda">Uganda</option>
+            </select>
+        
+            <div id="speciesSelection">
+                <!-- Initially hidden, displayed based on user's selection -->
+                <label for="plantSpecies"></label>
+                <select id="plantSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose your tree species</option>
+                    <!-- Tree species options will be dynamically populated -->
+                </select>
+        
+                <label for="wildlifeSpecies"></label>
+                <select id="wildlifeSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose wildlife species</option>
+                    <!-- Wildlife species options will be dynamically populated -->
+                </select>
+            <div>
+                <button onclick="getInfo()">Get Info</button>
+            </div>
+
+            <div class="display-section" id="displaySection">
+                <table>
+                    <caption></caption>
+                </table>
+            </div>
+        </aside>
+        </header>
+
+        <section class="country-section">
+            <img src="images/flags/South_Sudan.gif" alt="South Sudan Flag">
+            <div class="description-container">
+                <div class="description-wrapper">
+                    <div class="description">
+                        <h2>The Republic of South Sudan</h2>
+                        <p>
+                            South Sudan, officially known as the Republic of South Sudan, is a landlocked country nestled in eastern Central Africa. Its borders are shared with Ethiopia, Sudan, 
+                            the Central African Republic, the Democratic Republic of the Congo, Uganda, and Kenya. The expansive swamp region of the Sudd, formed by the White Nile and 
+                            locally referred to as the Bahr al Jabal, meaning "Mountain Sea," adds to the country's unique geographical features. With a population of 11,088,796 as of 2023, 
+                            Juba serves as both the capital and largest city of South Sudan. The country gained independence from Sudan on July 9, 2011, marking it as the most recent sovereign state with 
+                            widespread recognition as of 2024. South Sudan's history is marked by periods of colonization, conflict, and autonomy. Originally under Egyptian occupation during the Muhammad Ali dynasty, 
+                            Sudan was later governed as an Anglo-Egyptian condominium until it gained independence in 1956. The aftermath of the First Sudanese Civil War led to the formation of the Southern Sudan 
+                            Autonomous Region in 1972, which lasted until 1983. Subsequently, a second Sudanese civil war erupted in 1983, culminating in the Comprehensive Peace Agreement of 2005. 
+                            This agreement paved the way for the establishment of the Autonomous Government of Southern Sudan later that year. Finally, on January 9, 2011, 
+                            following overwhelming support for independence in a referendum, South Sudan officially became an independent state. Despite its tumultuous past, South Sudan remains a land of immense 
+                            potential, with vast natural resources and cultural diversity. As the nation continues to navigate its path towards stability and development, 
+                            it stands poised to carve out its place on the global stage as a sovereign and prosperous nation in the heart of Africa.
+                            </p><br>
+                            <p>
+                            South Sudan, the youngest nation in the world, boasts a landscape of breathtaking beauty, teeming with untamed wilderness and vibrant cultures. 
+                            Despite its tumultuous history, South Sudan is emerging as a promising destination for ecotourism, offering travelers the chance to explore its pristine natural wonders 
+                            and experience its rich cultural heritage. Located in the heart of East Africa, South Sudan is blessed with diverse ecosystems, including lush rainforests, expansive savannas, 
+                            and winding river systems. The mighty Nile River, which courses through the country, sustains a wealth of wildlife and supports thriving communities along its banks. 
+                            The Sudd, one of the largest wetlands in the world, is a haven for birdlife, including rare and endangered species such as the shoebill stork and the elusive papyrus gonolek.
+                            South Sudan's national parks and reserves are home to a variety of iconic African species, including elephants, giraffes, zebras, and antelopes. Boma National Park, 
+                            in the eastern part of the country, is renowned for its large herds of white-eared kob and tiang, while Nimule National Park, along the Ugandan border, 
+                            offers opportunities for wildlife viewing and birdwatching.
+                            </p><br>
+                            <p>
+                            In addition to its natural attractions, South Sudan is rich in cultural heritage, with over 60 indigenous ethnic groups speaking a multitude of languages and practicing diverse traditions. 
+                            Visitors to South Sudan can immerse themselves in traditional village life, participate in cultural ceremonies and rituals, and learn about the customs and beliefs of the country's diverse peoples.
+                            Despite its potential as an ecotourism destination, South Sudan faces numerous challenges, including political instability, 
+                            inadequate infrastructure, and limited resources for conservation and sustainable development. However, efforts are underway to promote ecotourism as a means of generating income for 
+                            local communities, conserving natural resources, and fostering peace and reconciliation.
+                            Community-based ecotourism initiatives, such as those supported by organizations like the Wildlife Conservation Society and the United Nations Development Programme, 
+                            are empowering local communities to manage and benefit from tourism in a sustainable manner. By involving communities in conservation efforts and providing alternative livelihoods, 
+                            these initiatives are helping to protect South Sudan's natural heritage while supporting the well-being of its people.
+                            As South Sudan continues to rebuild and develop, ecotourism has the potential to play a vital role in its economic growth and stability. With its wealth of natural and 
+                            cultural attractions, South Sudan offers travelers a unique and authentic African experience, while contributing to the conservation and sustainable development of this emerging nation.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-button">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        
+        <!-- plant section -->
+        <section class="plant-section">
+            <h1>The Plant Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Sudan Gum Arabic Tree.webp" alt="Sudan Gum Arabic Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Sudan Gum Arabic Tree</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Flat-top acacia.jpg" alt="Acacia Nilotica">
+                </div>
+                <div class="image-info">
+                    <h2>Acacia Nilotica</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Desert Date.jpg" alt="Desert Date">
+                </div>
+                <div class="image-info">
+                    <h2>Desert Date</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Ethiopian Frankincense Tree.jpg" alt="Ethiopian Frankincense Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Ethiopian Frankincense Tree</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African myrrh.png" alt="African myrrh">
+                </div>
+                <div class="image-info">
+                    <h2>African myrrh</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Ana Tree.jpg" alt="Ana Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Ana Tree</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Natal Mahogany.jpg" alt="Natal Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>Natal Mahogany</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Mango Tree.jpg" alt="Mango Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Mango Tree</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Star Chestnut.webp" alt="African Star Chestnut">
+                </div>
+                <div class="image-info">
+                    <h2>African Star Chestnut</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+        <!-- Animal section -->
+        <section class="animal-section">
+        <h1>The Animal Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African White Mahogany.png" alt="African White Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>African White Mahogany</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Iroko.jpg" alt="Iroko">
+                </div>
+                <div class="image-info">
+                    <h2>Iroko</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African pterygota.jpg" alt="African pterygota">
+                </div>
+                <div class="image-info">
+                    <h2>African pterygota</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African oil palm.jpg" alt="African oil palm">
+                </div>
+                <div class="image-info">
+                    <h2>African oil palm</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Pitch Pine.jpg" alt="Pitch Pine">
+                </div>
+                <div class="image-info">
+                    <h2>Pitch Pine</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African locust bean.jpg" alt="African locust bean">
+                </div>
+                <div class="image-info">
+                    <h2>African locust bean</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Afzelia.jpg" alt="Afzelia">
+                </div>
+                <div class="image-info">
+                    <h2>Afzelia</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Birch.jpg" alt="African Birch">
+                </div>
+                <div class="image-info">
+                    <h2>African Birch</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+    <script>
+            function goBack() {
+    window.location.href = "home.html";
+}
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+    <script src="./scripts/select.js"></script>
+    <script src="./scripts/scroll.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>Uganda-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/countries.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <button onclick="goBack()">&#8592; Back</button>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+
+        
+        <aside class="selection-container">
+            <label for="countries">Select Desired Africa Destination:</label>
+            <select id="countries">
+                <option value="" disabled selected>Select a Country</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Uganda">Uganda</option>
+            </select>
+        
+            <div id="speciesSelection">
+                <!-- Initially hidden, displayed based on user's selection -->
+                <label for="plantSpecies"></label>
+                <select id="plantSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose your tree species</option>
+                    <!-- Tree species options will be dynamically populated -->
+                </select>
+        
+                <label for="wildlifeSpecies"></label>
+                <select id="wildlifeSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose wildlife species</option>
+                    <!-- Wildlife species options will be dynamically populated -->
+                </select>
+            <div>
+                <button onclick="getInfo()">Get Info</button>
+            </div>
+
+            <div class="display-section" id="displaySection">
+                <table>
+                    <caption></caption>
+                </table>
+            </div>
+        </aside>
+        </header>
+
+        <section class="country-section">
+            <img src="images/flags/Uganda.gif" alt="Uganda flag">
+            <div class="description-container">
+                <div class="description-wrapper">
+                    <div class="description">
+                        <h2>The Republic of Uganda</h2>
+                        <p>
+                            Nestled within the heart of East Africa, Uganda, officially known as the Republic of Uganda, is a captivating landlocked country that boasts a rich tapestry of natural wonders and 
+                            cultural heritage. Bordered by Kenya to the east, South Sudan to the north, the Democratic Republic of the Congo to the west, Rwanda to the southwest, and Tanzania to the south, 
+                            Uganda's strategic location offers a gateway to the diverse landscapes of the African continent.
+                            The southern part of Uganda is graced by a substantial portion of Lake Victoria, one of the African Great Lakes, which it shares with Kenya and Tanzania. 
+                            This majestic lake not only adds to Uganda's scenic beauty but also plays a vital role in supporting local communities and ecosystems. Situated within the Nile basin, 
+                            Uganda enjoys a varied but generally modified equatorial climate, characterized by lush vegetation, abundant rainfall, and mild temperatures throughout much of the year. 
+                            This favorable climate contributes to Uganda's status as the "Pearl of Africa," as famously described by Winston Churchill.
+                            </p><br>
+                            <p>
+                            As of 2023, Uganda is home to approximately 49.6 million people, with its capital and largest city, Kampala, serving as a vibrant hub of commerce, culture, and innovation. 
+                            With a population of 8.5 million, Kampala pulsates with energy, reflecting Uganda's dynamic spirit and diverse cultural heritage.
+                            Uganda's allure extends beyond its bustling urban centers to its pristine wilderness areas, which offer a wealth of opportunities for ecotourism and adventure. 
+                            From the misty rainforests of Bwindi Impenetrable National Park, where travelers can embark on life-changing gorilla trekking experiences, to the vast savannas of 
+                            Queen Elizabeth National Park, home to iconic wildlife such as lions, elephants, and hippos, Uganda promises unforgettable encounters with nature.
+                            In addition to its natural beauty, Uganda's cultural heritage is equally captivating, with diverse ethnic groups contributing to the country's rich tapestry of traditions, 
+                            languages, and customs. Visitors can immerse themselves in local communities, participate in traditional ceremonies and festivals, and gain insight into Uganda's vibrant cultural mosaic.
+                            </p><br>
+                            <p>
+                            Uganda is a land of remarkable biodiversity, stunning landscapes, and vibrant cultures, making it a prime destination for ecotourism enthusiasts. 
+                            From the lush rainforests of Bwindi Impenetrable National Park to the expansive savannas of Queen Elizabeth National Park, Uganda offers a wealth of opportunities for travelers to 
+                            immerse themselves in nature while supporting conservation efforts and local communities.
+                            One of Uganda's most iconic ecotourism attractions is Bwindi Impenetrable National Park, home to approximately half of the world's mountain gorilla population. 
+                            Visitors to Bwindi have the rare opportunity to embark on gorilla trekking expeditions, where they can observe these majestic creatures in their natural habitat. 
+                            The park's dense forests are also home to a variety of other primates, including chimpanzees, as well as numerous bird species, making it a haven for wildlife enthusiasts 
+                            and birdwatchers alike. In addition to its renowned gorilla trekking experiences, Uganda boasts a network of national parks and protected areas that showcase the 
+                            country's diverse ecosystems and wildlife. Queen Elizabeth National Park, located in the western part of the country, is famous for its tree-climbing lions, herds of elephants, 
+                            and prolific birdlife, while Murchison Falls National Park, in the north, offers spectacular views of the Nile River as it plunges through a narrow gorge.
+                            </p><br>
+                            <p>
+                            Uganda's ecotourism offerings extend beyond its national parks, with opportunities for cultural immersion and community-based tourism experiences. 
+                            Visitors can stay in eco-friendly lodges and homestays run by local communities, where they can learn about traditional lifestyles, participate in cultural activities, 
+                            and support community development projects.
+                            For those interested in adventure tourism, Uganda's diverse landscapes provide ample opportunities for activities such as hiking, mountain biking, and whitewater rafting. 
+                            The Rwenzori Mountains, also known as the "Mountains of the Moon," offer challenging trekking routes with stunning views of glaciers and alpine lakes, 
+                            while the Nile River provides world-class whitewater rafting experiences.
+                            Uganda's commitment to sustainable tourism is evident in its efforts to protect its natural heritage and promote responsible travel practices. 
+                            The country has established conservation areas, implemented wildlife protection measures, and supported community-based tourism initiatives to ensure that ecotourism benefits 
+                            both the environment and the local people. Overall, Uganda's ecotourism sector offers travelers the opportunity to experience the country's incredible biodiversity, 
+                            immerse themselves in its rich cultural heritage, and contribute to conservation and community development efforts. Whether trekking with gorillas in Bwindi or exploring 
+                            the wilderness of Queen Elizabeth National Park, visitors to Uganda are sure to be captivated by its natural beauty and warm hospitality.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-button">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        
+        
+        <!-- plant section -->
+        <section class="plant-section">
+        <h1>The Plant Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Spotted gum.jpg" alt="Spotted gum">
+                </div>
+                <div class="image-info">
+                    <h2>Spotted gum</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.webp" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Ironwood.jpg" alt="African Ironwood">
+                </div>
+                <div class="image-info">
+                    <h2>African Ironwood</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Wild Fig Tree.jpg" alt="Wild Fig Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Wild Fig Tree</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Red Stinkwood.jpg" alt="Red Stinkwood">
+                </div>
+                <div class="image-info">
+                    <h2>Red Stinkwood</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Sausage Tree.jpg" alt="Sausage Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Sausage Tree</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Tamarind.jpg" alt="Tamarind">
+                </div>
+                <div class="image-info">
+                    <h2>Tamarind</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Croton Tree.jpg" alt="Croton Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Croton Tree</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Sandalwood.jpg" alt="Sandalwood">
+                </div>
+                <div class="image-info">
+                    <h2>Sandalwood</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+        <!-- Animal section -->
+        <section class="animal-section">
+        <h1>The Animal Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African White Mahogany.png" alt="African White Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>African White Mahogany</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Iroko.jpg" alt="Iroko">
+                </div>
+                <div class="image-info">
+                    <h2>Iroko</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African pterygota.jpg" alt="African pterygota">
+                </div>
+                <div class="image-info">
+                    <h2>African pterygota</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African oil palm.jpg" alt="African oil palm">
+                </div>
+                <div class="image-info">
+                    <h2>African oil palm</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Pitch Pine.jpg" alt="Pitch Pine">
+                </div>
+                <div class="image-info">
+                    <h2>Pitch Pine</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African locust bean.jpg" alt="African locust bean">
+                </div>
+                <div class="image-info">
+                    <h2>African locust bean</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Afzelia.jpg" alt="Afzelia">
+                </div>
+                <div class="image-info">
+                    <h2>Afzelia</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Birch.jpg" alt="African Birch">
+                </div>
+                <div class="image-info">
+                    <h2>African Birch</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+    <script>
+            function goBack() {
+    window.location.href = "home.html";
+}
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+    <script src="./scripts/select.js"></script>
+    <script src="./scripts/scroll.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-signin-scope" content="profile email">
+            <meta name="google-signin-cookiepolicy" content="single_host_origin">
+            <meta name="google-signin-redirect_uri" content="http://localhost:5500/eco.html">
+            <meta name="author" content="Ayotunde Adeleke">
+            <meta name="description" content="EcoExplorer">
+            <meta name="keywords" content="eco,explorer">
+            <meta name="google-signin-client_id" content="136593872334-tqi8g521263spopua88h8q20st28k7ea.apps.googleusercontent.com">
+            <title>Kenya-EcoExplorer</title>
+            <link rel="stylesheet" href="./css/countries.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        </head>
+<body>
+    <header>
+        <button onclick="goBack()">&#8592; Back</button>
+        <h1><a href="home.html">Tourism Explorer</a></h1>
+
+        
+        <aside class="selection-container">
+            <label for="countries">Select Desired Africa Destination:</label>
+            <select id="countries">
+                <option value="" disabled selected>Select a Country</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Uganda">Uganda</option>
+            </select>
+        
+            <div id="speciesSelection">
+                <!-- Initially hidden, displayed based on user's selection -->
+                <label for="plantSpecies"></label>
+                <select id="plantSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose your tree species</option>
+                    <!-- Tree species options will be dynamically populated -->
+                </select>
+        
+                <label for="wildlifeSpecies"></label>
+                <select id="wildlifeSpecies" style="display: none;">
+                    <option value="" disabled selected>Choose wildlife species</option>
+                    <!-- Wildlife species options will be dynamically populated -->
+                </select>
+            <div>
+                <button onclick="getInfo()">Get Info</button>
+            </div>
+
+            <div class="display-section" id="displaySection">
+                <table>
+                    <caption></caption>
+                </table>
+            </div>
+        </aside>
+        </header>
+
+        <section class="country-section">
+            <img src="images/flags/Kenya.gif" alt="Kenya Flag">
+            <div class="description-container">
+                <div class="description-wrapper">
+                    <div class="description">
+                        <h2>The Republic of Kenya</h2>
+                        <p>
+                            Kenya's history is a journey through time, echoing with the stories of ancient civilizations, colonial influences, and the ongoing quest for self-determination. 
+                            From the early human settlements discovered in the Rift Valley to the powerful empires that once ruled the land, Kenya's past unfolds like a captivating narrative. 
+                            The legacy of colonial rule is evident in its diverse cultural tapestry, where ancient traditions coexist with modern influences. 
+                            Over 40 ethnic groups, each with their unique customs, languages, and vibrant artistic expressions, contribute to the richness of Kenyan culture.
+                            Kenya's diverse landscapes captivate the imagination. The vast savannas of the Maasai Mara, teeming with iconic wildlife like lions, elephants, and zebras, 
+                            paint a picture of untamed wilderness. Lush rainforests, shrouded in mist, cling to the slopes of Mount Kenya, offering a sense of serenity and beauty. 
+                            The turquoise waters of the Indian Ocean lap at idyllic beaches, fringed by swaying palm trees and vibrant coral reefs. 
+                            This remarkable diversity, a testament to Kenya's geographical richness, promises an unforgettable adventure for every visitor.
+                            </p><br>
+                            <p>
+                            Gaining independence from colonial rule in 1963, Kenya embarked on a journey of nation-building under the visionary leadership of figures like Jomo Kenyatta. 
+                            This era marked the dawn of a new chapter in Kenya's history, characterized by aspirations for unity, development, and progress.
+                            Blessed with diverse landscapes, Kenya's natural wealth is a source of pride and wonder. The iconic savannahs of the Maasai Mara teem with wildlife, o
+                            ffering unparalleled opportunities for safari adventures and wildlife conservation. From the majestic elephants of Amboseli to the elusive leopards of Tsavo, 
+                            Kenya's national parks and reserves are sanctuaries for some of the world's most magnificent creatures. 
+                            Yet, beyond its famed wildlife, Kenya is also home to breathtaking landscapes such as the snow-capped peaks of Mount Kenya, the turquoise waters of the Indian Ocean, 
+                            and the lush forests of the Aberdare Range. These natural wonders provide a playground for outdoor enthusiasts, from mountain climbers and hikers to snorkelers and beachgoers.
+                            </p><br>
+                            <p>
+                            Kenya is a melting pot of traditions, languages, and ethnicities, with over 40 distinct communities contributing to its rich tapestry of heritage. 
+                            From the vibrant markets of Nairobi to the traditional villages of the Maasai, Kenya pulsates with the rhythms of diversity and resilience.
+                            Festivals and celebrations play a central role in Kenyan culture, serving as occasions for communal joy and spiritual expression. 
+                            Events like the annual Wildebeest Migration, the Lamu Cultural Festival, and the Mombasa Carnival showcase Kenya's rich cultural heritage and attract visitors from around the world.
+                            Governed as a democratic republic, Kenya upholds principles of democracy, human rights, and the rule of law. Under the leadership of President Uhuru Kenyatta, 
+                            the country continues to pursue initiatives aimed at fostering economic growth, improving infrastructure, and enhancing social welfare for all its citizens.
+                            With its breathtaking landscapes, rich cultural heritage, and dynamic spirit, Kenya stands as a beacon of hope and possibility in the heart of Africa, 
+                            inviting travelers and admirers to experience its boundless wonders and vibrant culture.</p>                            
+                    </div>
+                </div>
+            </div>
+            <div class="expand-button">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        
+        <!-- plant section -->
+        <section class="plant-section">
+            <h1>The Plant Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Croton Tree.jpg" alt="Croton Tree">
+                </div>
+                <div class="image-info">
+                    <h2>Croton Tree</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Red Thorn.jpg" alt="Red Thorn">
+                </div>
+                <div class="image-info">
+                    <h2>Red Thorn</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Spotted gum.jpg" alt="Spotted gum">
+                </div>
+                <div class="image-info">
+                    <h2>Spotted gum</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/lightwood.jpg" alt="lightwood">
+                </div>
+                <div class="image-info">
+                    <h2>Lightwood</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Gum arabic tree.jpg" alt="Gum arabic tree">
+                </div>
+                <div class="image-info">
+                    <h2>Gum arabic tree</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Long-tail cassia.jpg" alt="Long-tail cassia">
+                </div>
+                <div class="image-info">
+                    <h2>Long-tail cassia</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African myrrh.png" alt="African myrrh">
+                </div>
+                <div class="image-info">
+                    <h2>African myrrh</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African redwood.jpg" alt="African redwood">
+                </div>
+                <div class="image-info">
+                    <h2>African redwood</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Myrrh Tree.webp" alt="African Senna">
+                </div>
+                <div class="image-info">
+                    <h2>African Senna</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+        <!-- Animal section -->
+        <section class="animal-section">
+        <h1>The Animal Species</h1>
+        <section class="image-tiles">
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African White Mahogany.png" alt="African White Mahogany">
+                </div>
+                <div class="image-info">
+                    <h2>African White Mahogany</h2>
+                    <p>Description of Image 1</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Iroko.jpg" alt="Iroko">
+                </div>
+                <div class="image-info">
+                    <h2>Iroko</h2>
+                    <p>Description of Image 2</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African pterygota.jpg" alt="African pterygota">
+                </div>
+                <div class="image-info">
+                    <h2>African pterygota</h2>
+                    <p>Description of Image 3</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African oil palm.jpg" alt="African oil palm">
+                </div>
+                <div class="image-info">
+                    <h2>African oil palm</h2>
+                    <p>Description of Image 4</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Pitch Pine.jpg" alt="Pitch Pine">
+                </div>
+                <div class="image-info">
+                    <h2>Pitch Pine</h2>
+                    <p>Description of Image 5</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African locust bean.jpg" alt="African locust bean">
+                </div>
+                <div class="image-info">
+                    <h2>African locust bean</h2>
+                    <p>Description of Image 6</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Afzelia.jpg" alt="Afzelia">
+                </div>
+                <div class="image-info">
+                    <h2>Afzelia</h2>
+                    <p>Description of Image 7</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/African Birch.jpg" alt="African Birch">
+                </div>
+                <div class="image-info">
+                    <h2>African Birch</h2>
+                    <p>Description of Image 8</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Neem.jpg" alt="Neem">
+                </div>
+                <div class="image-info">
+                    <h2>Neem</h2>
+                    <p>Description of Image 9</p>
+                </div>
+            </div>
+            <div class="image-tile">
+                <div class="image-container">
+                <img src="images/plants/Baobab.jpg" alt="Baobab">
+                </div>
+                <div class="image-info">
+                    <h2>Baobab</h2>
+                    <p>Description of Image 10</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="find-out-more">
+            <a href="#">Find Out More</a>
+        </section>
+        </section>
+
+    <script>
+            function goBack() {
+    window.location.href = "home.html";
+}
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+
+            answer.classList.toggle('active');
+            element.querySelector('.toggle').textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/menu2.js"></script>    
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/species.js"></script>
+    <script src="/scripts//country.js"></script>
+    <script src="./scripts/wildlife.js"></script>
+    <script src="./scripts/forgotpass.js"></script>
+    <script src="./scripts/select.js"></script>
+    <script src="./scripts/scroll.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 EcoExplorer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
