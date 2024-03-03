@@ -160,13 +160,13 @@ header nav ul {
 }
 
 .welcome-message a {
-    color: #333;
+    color: #26722a;
     font-weight: bold;
     text-decoration: none;
 }
 
 .welcome-message a:hover {
-    color: #555;
+    color: #45a045;
 }
 
 /* Modal styles */
