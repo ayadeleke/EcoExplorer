@@ -330,8 +330,6 @@ footer {
         margin-left: 10px;
         margin-right: 10px;
     }
-        
-    }
 
     .display-section {
         margin-top: 20px;
@@ -346,7 +344,7 @@ footer {
     }
 
     .country-section h2 {
-        font-size: 4vw;
+        font-size: 6vw;
     }
 
     .description-wrapper {
