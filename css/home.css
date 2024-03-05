@@ -138,9 +138,17 @@ header nav ul {
 }
 
 /* Welcome message styles */
+@keyframes slideAndBounce {
+    0%, 100% { transform: translateX(-100%); }
+    20%, 60%, 80% { transform: translateX(10%); }
+    40% { transform: translateX(-5%); }
+    80% { transform: translateX(0%); }
+    100% { transform: translateX(0%); }
+}
+
 .welcome-message {
     max-width: 1200px;
-    margin: 0px auto;
+    margin: 0 auto;
     margin-top: 10px;
     padding: 5px 40px;
     background-color: rgba(248, 248, 248, 0.7);
@@ -148,7 +156,10 @@ header nav ul {
     border-radius: 8px;
     text-align: justify;
     color: black;
+    transform: translateX(-100%);
+    animation: slideAndBounce 2.0s ease-in-out forwards;
 }
+
 
 .welcome-message p {
     margin-bottom: 18px;
