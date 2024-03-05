@@ -136,7 +136,7 @@ header nav ul {
 .description-container {
     position: relative;
     overflow: hidden;
-    margin-bottom: 20px; /* Add space below the description */
+    margin-bottom: 20px; 
 }
 
 .description-wrapper {
@@ -324,6 +324,15 @@ footer {
         margin-top: 10px;
     }
 
+    .description p{
+        font-size: 16px;
+        text-align: justify;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+        
+    }
+
     .display-section {
         margin-top: 20px;
         width: auto;
@@ -337,9 +346,7 @@ footer {
     }
 
     .country-section h2 {
-        font-size: 1.2em;
-        font-family: 'Kalam';
-        margin-bottom: 20px;
+        font-size: 4vw;
     }
 
     .description-wrapper {
