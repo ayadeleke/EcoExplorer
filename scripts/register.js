@@ -83,7 +83,7 @@ function register() {
     }
 
     // Send registration data to the server
-    fetch('http://localhost:3000/register', {
+    fetch('https://ecoserver-i4v6.onrender.com:10000/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

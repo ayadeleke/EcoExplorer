@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 // Enable CORS for all routes
 app.use(cors());
@@ -136,5 +136,5 @@ app.post('/submit-contact-form', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on PORT:${port}`);
 });

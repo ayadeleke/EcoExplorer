@@ -64,7 +64,7 @@ function login() {
     const password = document.getElementById('loginPassword').value;
 
     // Send login data to the server
-    fetch('http://localhost:3000/login', {
+    fetch('https://ecoserver-i4v6.onrender.com:10000/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

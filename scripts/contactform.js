@@ -10,7 +10,7 @@ function submitContactForm() {
     };
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:3000/submit-contact-form', true);  // Adjust the URL if needed
+    xhr.open('POST', 'https://ecoserver-i4v6.onrender.com:10000/submit-contact-form', true);  // Adjust the URL if needed
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
