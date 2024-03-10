@@ -65,7 +65,7 @@ function register() {
     registrationMessage.innerHTML = 'Processing...';
 
     // Send registration data to the server
-    fetch('https://ecoserver-i4v6.onrender.com:3000/register', {
+    fetch('https://ecoserver-1.onrender.com:3000/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

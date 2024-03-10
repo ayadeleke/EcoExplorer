@@ -15,7 +15,7 @@ function submitContactForm() {
         message: message
     };
 
-    fetch('https://ecoserver-i4v6.onrender.com:3000/submit-contact-form', {
+    fetch('https://ecoserver-1.onrender.com:3000/submit-contact-form', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
