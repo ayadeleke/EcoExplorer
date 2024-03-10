@@ -28,7 +28,7 @@ function sendResetPasswordEmail() {
     }
 
     // Send reset password email to the server
-    fetch('http://localhost:3000/reset-password', {
+    fetch('https://ecoserver-1.onrender.com:3000/reset-password', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
