@@ -1,7 +1,13 @@
 function submitContactForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validate input fields
+    if (!name || !email || !message) {
+        console.error('Please fill in all fields.');
+        return;
+    }
 
     const formData = {
         name: name,
@@ -9,30 +15,36 @@ function submitContactForm() {
         message: message
     };
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://ecoserver-i4v6.onrender.com:10000/submit-contact-form', true);  // Adjust the URL if needed
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-            const contactMessageElement = document.getElementById('contactMessage');
-            if (contactMessageElement) {
-                contactMessageElement.innerHTML = response.message;
-            } else {
-                console.error('Element with ID "contactMessage" not found.');
-            }
-
-            // Clear the form fields on successful submission
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-        } else {
-            console.error('Error submitting contact form:', xhr.statusText);
+    fetch('https://ecoserver-i4v6.onrender.com:3000/submit-contact-form', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to submit contact form');
         }
-    };
+        return response.json();
+    })
+    .then(data => {
+        const contactMessageElement = document.getElementById('contactMessage');
+        if (contactMessageElement) {
+            contactMessageElement.innerHTML = data.message;
+        } else {
+            console.error('Element with ID "contactMessage" not found.');
+        }
 
-    xhr.send(JSON.stringify(formData));
+        // Clear the form fields on successful submission
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    })
+    .catch(error => {
+        console.error('Error submitting contact form:', error.message);
+        // Optionally, display an error message to the user
+    });
 }
 
 // Event listener to submit message when pressing Enter

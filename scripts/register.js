@@ -10,31 +10,14 @@ function closeRegister() {
     registrationModal.style.display = 'none';
 }
 
-// Event listener to to use enter for registration
-document.getElementById('registerUsername').addEventListener('keyup', function (event) {
+// Event listener to use Enter key for registration
+document.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
-        register();
+        if (document.activeElement.id === 'registerUsername' || document.activeElement.id === 'registerEmail' || document.activeElement.id === 'registerPassword' || document.activeElement.id === 'confirmPassword') {
+            register();
+        }
     }
 });
-
-document.getElementById('registerEmail').addEventListener('keyup', function (event) {
-    if (event.key === 'Enter') {
-        register();
-    }
-});
-
-document.getElementById('registerPassword').addEventListener('keyup', function (event) {
-    if (event.key === 'Enter') {
-        register();
-    }
-});
-
-document.getElementById('confirmPassword').addEventListener('keyup', function (event) {
-    if (event.key === 'Enter') {
-        register();
-    }
-});
-
 
 // Function to handle registration with Google
 function registerWithGoogle(email) {
@@ -50,12 +33,11 @@ function register() {
     const email = document.getElementById('registerEmail').value.trim();
     const password = document.getElementById('registerPassword').value.trim();
     const confirmPassword = document.getElementById('confirmPassword').value.trim();
-
+    const registrationMessage = document.getElementById('registrationMessage');
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        const registrationMessage = document.getElementById('registrationMessage');
         registrationMessage.innerHTML = 'Please enter a valid email address.';
         return;
     }
@@ -63,27 +45,27 @@ function register() {
     // Validate password complexity
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
     if (!passwordRegex.test(password)) {
-        const registrationMessage = document.getElementById('registrationMessage');
         registrationMessage.innerHTML = 'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.';
         return;
     }
 
     // Validate matching passwords
     if (password !== confirmPassword) {
-        const registrationMessage = document.getElementById('registrationMessage');
         registrationMessage.innerHTML = 'Passwords do not match.';
         return;
     }
 
-     // Check for empty input fields
+    // Check for empty input fields
     if (!username || !email || !password || !confirmPassword) {
-        const registrationMessage = document.getElementById('registrationMessage');
         registrationMessage.innerHTML = 'Please fill in all fields.';
         return;
     }
 
+    // Display loading message
+    registrationMessage.innerHTML = 'Processing...';
+
     // Send registration data to the server
-    fetch('https://ecoserver-i4v6.onrender.com:10000/register', {
+    fetch('https://ecoserver-i4v6.onrender.com:3000/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -97,12 +79,10 @@ function register() {
             return response.json();
         })
         .then(data => {
-            const registrationMessage = document.getElementById('registrationMessage');
             registrationMessage.innerHTML = data.message;
             console.log(data);
         })
         .catch(error => {
-            const registrationMessage = document.getElementById('registrationMessage');
             registrationMessage.innerHTML = 'Error: ' + error.message;
             console.error('Registration error:', error);
         });
