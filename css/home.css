@@ -16,23 +16,23 @@
 
 @keyframes backgroundAnimation {
     0% {
-        background-image: linear-gradient(rgba(0,0,0,0.3), #bfd4ff), url('bg/destination1.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0), #bfd4ff), url('bg/Animal1.jpg');
         background-position: 100% 75%;
     }
     25% {
-        background-image: linear-gradient(rgba(0,0,0,0.3), #bfd4ff), url('bg/destination2.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0), #bfd4ff), url('bg/Plants1.jpg');
         background-position: 75% 50%;
     }
     50% {
-        background-image: linear-gradient(rgba(0,0,0,0.3), #bfd4ff), url('bg/destination3.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0), #bfd4ff), url('bg/Animal2.jpg');
         background-position: 25% 75%;
     }
     75% {
-        background-image: linear-gradient(rgba(0,0,0,0.3), #bfd4ff), url('bg/destination4.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0), #bfd4ff), url('bg/Animal3.jpg');
         background-position: 50% 25%;
     }
     100% {
-        background-image: linear-gradient(rgba(0,0,0,0.3), #bfd4ff), url('bg/yankari.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0), #bfd4ff), url('bg/Plants2.jpg');
         background-position: 0 75%;
     }
 }
