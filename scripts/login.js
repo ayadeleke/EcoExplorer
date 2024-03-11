@@ -64,7 +64,7 @@ function login() {
     const password = document.getElementById('loginPassword').value;
 
     // Send login data to the server
-    fetch('https://ecoexplorerr.netlify.app:3000/login', {
+    fetch('https://ecoserver-1.onrender.com:3000/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
