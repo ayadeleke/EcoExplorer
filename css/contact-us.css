@@ -17,6 +17,11 @@ section {
     margin-bottom: 40px;
 }
 
+#contact textarea {
+    padding: 10px;
+}
+
+
 /* Form styling */
 form {
     display: grid;
