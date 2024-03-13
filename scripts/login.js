@@ -58,10 +58,23 @@ function onSignIn(googleUser) {
 }
 
 
+// Function to show loading spinner
+function showLoading() {
+    document.getElementById('loadingSpinner').style.display = 'block';
+}
+
+// Function to hide loading spinner
+function hideLoading() {
+    document.getElementById('loadingSpinner').style.display = 'none';
+}
+
 // Function to handle user login
 function login() {
     const username = document.getElementById('loginUsername').value;
     const password = document.getElementById('loginPassword').value;
+
+    // Show loading spinner
+    showLoading();
 
     // Send login data to the server
     fetch('https://ecoserver-1.onrender.com/login', {
@@ -94,6 +107,11 @@ function login() {
             const loginMessage = document.getElementById('loginMessage');
             loginMessage.innerHTML = 'Error: ' + error.message;
             console.error('Login error:', error);
+        })
+        .finally(() => {
+            // Hide loading spinner after login request completes
+            hideLoading();
         });
 }
+
 
