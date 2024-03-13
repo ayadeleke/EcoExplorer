@@ -27,6 +27,9 @@ function sendResetPasswordEmail() {
         return;
     }
 
+    // Display sending message
+    forgotPasswordMessage.innerHTML = 'Sending please wait...';
+
     // Send reset password email to the server
     fetch('https://ecoserver-1.onrender.com/reset-password', {
         method: 'POST',

@@ -15,6 +15,15 @@ function submitContactForm() {
         message: message
     };
 
+    // Display sending message
+    const contactMessageElement = document.getElementById('contactMessage');
+    if (contactMessageElement) {
+        contactMessageElement.innerHTML = 'Sending message...';
+    } else {
+        console.error('Element with ID "contactMessage" not found.');
+    }
+
+    // Send request to server
     fetch('https://ecoserver-1.onrender.com/submit-contact-form', {
         method: 'POST',
         headers: {
@@ -29,7 +38,6 @@ function submitContactForm() {
         return response.json();
     })
     .then(data => {
-        const contactMessageElement = document.getElementById('contactMessage');
         if (contactMessageElement) {
             contactMessageElement.innerHTML = data.message;
         } else {
@@ -43,6 +51,9 @@ function submitContactForm() {
     })
     .catch(error => {
         console.error('Error submitting contact form:', error.message);
+        if (contactMessageElement) {
+            contactMessageElement.innerHTML = 'Failed to submit message. Please try again later.';
+        }
     });
 }
 
