@@ -11,16 +11,48 @@ Conservation Projects: Engage in community-based conservation projects to contri
 Educational Resources: Expand your knowledge with educational resources on wildlife conservation and sustainable tourism practices.
 User Engagement: Connect with other users through forums, discussion boards, and direct messaging to share experiences and tips.
 
-### Installation
-To get started with EcoExplorer, follow these steps:
+### EcoExplorer Installation Guide
 
-Clone the repository: git clone https://github.com/ayadeleke/EcoExplorer.git
-Navigate to the project directory: cd EcoExplorer
-Install dependencies: npm install
-Start the application: node start
+To start using EcoExplorer, follow these simple installation steps:
+
+1. **Clone the Repository:**
+   ```
+   git clone https://github.com/ayadeleke/EcoExplorer.git
+   ```
+
+2. **Navigate to the Project Directory:**
+   ```
+   cd EcoExplorer/server
+   ```
+
+3. **Install Dependencies:**
+   ```
+   npm install
+   ```
+
+4. **Start the Application:**
+   ```
+   node start
+   ```
+
+5. **Server Setup:**
+   - Navigate to the server directory.
+   - Ensure dependencies are installed within this directory.
+   - Start the server:
+     ```
+     node server.js
+     ```
+
+6. **Launch EcoExplorer:**
+   - Open your web browser.
+   - Navigate to the home HTML [home.html] file located in the repository directory.
+
+7. **Ready to Explore:**
+   - Once the server is running, EcoExplorer is ready for use.
+   - Start exploring its features and functionalities.
 
 ### Usage
-Once the application is running, you can access EcoExplorer through your web browser. Sign up or log in to your account to begin exploring the rich biodiversity of Africa. Use the country selection feature to choose your destination, and delve into the wildlife and conservation projects available. Don't forget to check out the educational resources for valuable insights into conservation practices.
+Once the application is running, you can access EcoExplorer through your web browser. Sign up or log in to your account to begin exploring the rich biodiversity of Africa. Use the country selection feature to choose your destination, and delve into the wildlife and conservation projects available. Don't forget to check out the accomodation and FAQ resources for valuable insights into ecoexplorer project practices.
 
 ### Contributing
 We welcome contributions from the community to enhance EcoExplorer further. If you'd like to contribute, please follow these guidelines:
