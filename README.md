@@ -51,6 +51,20 @@ To start using EcoExplorer, follow these simple installation steps:
    - Once the server is running, EcoExplorer is ready for use.
    - Start exploring its features and functionalities.
 
+**To install the Mobile Applications**
+   - Navigate to the directory mobile_apps
+
+   **For Android**
+   - Navigate to the mobile directory
+   - Then to Android (Copy the apk file into your android mobile phone)
+   - Install the apk to your phone and start exploring the potential of the app.
+
+   **For IOS**
+   - Navigate to the IOS directory
+   - Using Xcode software on your mac ios.
+   - Connect you ios phone to the machine and use the platform to install EcoExplorer to your phone using the source code in the directory.
+   - Start exploring its features and functionalities.
+
 ### Usage
 Once the application is running, you can access EcoExplorer through your web browser. Sign up or log in to your account to begin exploring the rich biodiversity of Africa. Use the country selection feature to choose your destination, and delve into the wildlife and conservation projects available. Don't forget to check out the accomodation and FAQ resources for valuable insights into ecoexplorer project practices.
 
